@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', cursive;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+header {
+    background: #ffcccc;
+    color: #333;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.banner {
+    position: relative;
+    height: 30vh;
+    color: #ff77a9;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.banner h2 {
+    background-color: rgba(255, 255, 255, 0.842);
+    padding: 0.5rem;
+    font-size: 2rem;
+    z-index: 1;
+}
+
+.container {
+    text-align: center;
+    padding: 1rem;
+    width: auto;
+    margin: 0 auto;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.product {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 5px;
+    flex: 1 1 calc(33% - 1rem);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0.5rem;
+}
+
+.product h3 {
+    margin: 0.5rem 0;
+}
+
+.product p {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.product .price {
+    font-weight: bold;
+    color: #333;
+}
+
+.product button {
+    background: #ff77a9;
+    color: #fff;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.product button:hover {
+    background: #ff66b2;
+}
+
+form input,
+form button {
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+
+form {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form-cadastro {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-cadastro label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-cadastro input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-cadastro button {
+    background: #ff77a9;
+    color: #fff;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-cadastro button:hover {
+    background: #ff66b2;
+}
+
+@media (max-width: 1024px) {
+    .product {
+        flex: 1 1 calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        flex: 1 1 90%;
+    }
+
+    .banner h2 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        height: 40vh;
+    }
+
+    .banner h2 {
+        font-size: 1.2rem;
+    }
+
+    .product {
+        flex: 1 1 100%;
+    }
+
+    .form-cadastro {
+        padding: 0.5rem;
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.container-exc {
+    text-align: center;
+    padding: 1rem;
+    width: auto;
+}
+
+.products-exc {
+    margin: 0;
+    display: flex;
+}
+
+.form-exc {
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+}
