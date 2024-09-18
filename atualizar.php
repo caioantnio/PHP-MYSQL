@@ -1,9 +1,6 @@
 <?php
 include "conecta.php";
 
-// Conecta ao banco de dados
-$mysqli = new mysqli("localhost", "root", "", "loja");
-
 // Variável para armazenar mensagem
 $message = '';
 
@@ -16,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         if ($id) {
             // Atualiza o produto
-            $stmt = $mysqli->prepare("UPDATE produtos SET descricao = ?, fabricante = ?, preco_venda = ? WHERE id = ?");
+            $stmt = $conexao->prepare("UPDATE produtos SET descricao = ?, fabricante = ?, preco_venda = ? WHERE id = ?");
             $stmt->bind_param('ssdi', $descricao, $fabricante, $preco_venda, $id);
             if ($stmt->execute()) {
                 $message = "Produto atualizado com sucesso!";
@@ -34,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $product = null;
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $stmt = $mysqli->prepare("SELECT * FROM produtos WHERE id = ?");
+    $stmt = $conexao->prepare("SELECT * FROM produtos WHERE id = ?");
     $stmt->bind_param('i', $id);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -44,9 +41,9 @@ if (isset($_GET['id'])) {
 
 // Buscar todos os produtos
 $query = "SELECT * FROM produtos";
-$result = $mysqli->query($query);
+$result = $conexao->query($query);
 
-$mysqli->close();
+$conexao->close();
 ?>
 
 <!DOCTYPE html>

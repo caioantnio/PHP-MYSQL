@@ -1,8 +1,6 @@
 <?php
 include "conecta.php";
 
-$mysqli = new mysqli("localhost", "root", "", "loja");
-
 $descricao = $_GET['descricao'] ?? '';
 $fabricante = $_GET['fabricante'] ?? '';
 $mostrarZerados = isset($_GET['zerados']) ? true : false;
@@ -35,7 +33,7 @@ if ($preco_min != '' && $preco_max != '') {
     $query .= " AND preco_venda <= $preco_max";
 }
 
-$result = $mysqli->query($query);
+$result = $conexao->query($query);
 ?>
 
 <!DOCTYPE html>
@@ -109,5 +107,5 @@ $result = $mysqli->query($query);
 </html>
 
 <?php
-$mysqli->close();
+$conexao->close();
 ?>

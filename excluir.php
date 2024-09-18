@@ -1,19 +1,16 @@
 <?php
 include "conecta.php";
 
-// Conectar ao banco de dados
-$mysqli = new mysqli("localhost", "root", "", "loja");
-
 // Verificar conexão
-if ($mysqli->connect_error) {
-    die("Falha na conexão: " . $mysqli->connect_error);
+if ($conexao->connect_error) {
+    die("Falha na conexão: " . $conexao->connect_error);
 }
 
 // Verificar se foi solicitado a exclusão de um produto
 if (isset($_POST['delete_id'])) {
     $id = intval($_POST['delete_id']);
     $sql_delete = "DELETE FROM produtos WHERE id = ?";
-    $stmt = $mysqli->prepare($sql_delete);
+    $stmt = $conexao->prepare($sql_delete);
     $stmt->bind_param('i', $id);
 
     if ($stmt->execute()) {
@@ -27,7 +24,7 @@ if (isset($_POST['delete_id'])) {
 
 // Buscar todos os produtos
 $sql = "SELECT * FROM produtos";
-$result = $mysqli->query($sql);
+$result = $conexao->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -99,5 +96,5 @@ $result = $mysqli->query($sql);
 
 <?php
 // Fechar a conexão
-$mysqli->close();
+$conexao->close();
 ?>
