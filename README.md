@@ -1,3 +1,4 @@
-# To Do List JavaScript
+# Atividade PHP+SQL
 
-Caio Antônio e Marcella Pless
+Desenvolvido por: Caio Antônio e Marcella Pless
+Disciplina de Tecnologias Computacionais IFRJ - CAC
